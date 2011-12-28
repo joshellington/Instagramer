@@ -1,5 +1,5 @@
 source :rubygems
 
-gem 'sinatra
+gem 'sinatra'
 gem 'instagram'
 gem 'newrelic_rpm'

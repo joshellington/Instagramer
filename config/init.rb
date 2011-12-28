@@ -5,6 +5,10 @@ require 'json'
 require 'date'
 require 'time'
 
+enable :sessions
+
+CALLBACK_URL = "http://localhost:9393/oauth/callback"
+
 def base_uri
   base_uri_raw = request.env["HTTP_HOST"]+request.env["SCRIPT_NAME"]
   path = URI.parse(request.env["REQUEST_URI"]).path

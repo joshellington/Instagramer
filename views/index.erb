@@ -1,0 +1,22 @@
+<h1>Instagramer</h1>
+
+<div id="search">
+  <h2>Search <span></span></h2>
+  <form id="searchform">
+    <input type="text" id="s" placeholder="Search for person...">
+  </form>
+  <div id="results"></div>
+</div>
+
+<div id="local">
+  <h2>Local photos <span>loading...</span></h2>
+</div>
+
+<div id="your-photos">
+  <h2>Your photos</h2>
+  <% @feed.each_with_index do |media_item,i| %>
+    <div class="image <% if i % 3 == 0 %>first<% end %>">
+      <img src="<%= media_item.images.low_resolution.url %>">
+    </div>
+  <% end %>
+</div>
