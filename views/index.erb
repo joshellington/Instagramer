@@ -16,7 +16,7 @@
   <h2>Your photos</h2>
   <% @feed.each_with_index do |media_item,i| %>
     <div class="image <% if i % 3 == 0 %>first<% end %>">
-      <img src="<%= media_item.images.low_resolution.url %>">
+      <a href="<%= media_item.link %>" target="_blank"><img src="<%= media_item.images.low_resolution.url %>"></a>
     </div>
   <% end %>
 </div>
