@@ -24,7 +24,8 @@ get '/' do
 
     erb :index
   else
-    '<a href="/oauth/connect">Connect with Instagram</a>'
+    redirect '/oauth/connect'
+    # '<a href="/oauth/connect">Connect with Instagram</a>'
   end
 end
 
@@ -35,6 +36,7 @@ end
 get '/oauth/callback' do
   response = Instagram.get_access_token(params[:code], :redirect_uri => CALLBACK_URL)
   session[:access_token] = response.access_token
+  puts response.access_token
   redirect '/'
 end
 
